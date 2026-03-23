@@ -50,7 +50,7 @@ export default function App() {
         <h1>VentOut</h1>
 
         <p className="tagline">
-          A quiet space where you can say what’s on your mind.
+          A quiet space where you as a TU Delft student can say what’s on your mind.
         </p>
 
         <p className="quote">
@@ -58,7 +58,7 @@ export default function App() {
         </p>
 
         <p className="note">
-          Not therapy. Not counseling. Just a place to be heard.
+          Not therapy. Not counseling. Full Privacy. Just a place to be heard.
         </p>
 
         <button className="cta" onClick={startWhatsApp}>
@@ -115,7 +115,7 @@ export default function App() {
       <section className="offers">
         <h2>Special Notes</h2>
         <ul>
-          <li>🎓 Students abroad get +5 minutes extra</li>
+          <li>🎓 Students from abroad get +5 minutes extra</li>
           <li>🔥 First 3 callers get +3 minutes extra</li>
           <li>⏳ Sessions confirmed via WhatsApp</li>
         </ul>
