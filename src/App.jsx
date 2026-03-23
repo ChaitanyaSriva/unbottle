@@ -10,7 +10,7 @@ export default function App() {
   });
 
   const [userType, setUserType] = useState("normal");
-  const [callerIndex] = useState(1); // you can later make this dynamic
+  const [callerIndex] = useState(1);
 
   const applyExtras = () => {
     let extra = 0;
@@ -34,8 +34,17 @@ export default function App() {
   };
 
   const startWhatsApp = () => {
+    const { extra, note } = applyExtras();
+
+    const planLabel =
+      selectedPlan.mins === 30 ? "20+ min" : `${selectedPlan.mins} min`;
+
     const message = encodeURIComponent(
-      "Hi, I want to book a VentOut session. I came from your website."
+      `Hi, I want to book a VentOut session.\n\n` +
+        `Plan: ${planLabel}\n` +
+        `Price: €${selectedPlan.price}\n` +
+        `Bonus: ${extra} min ${note}\n\n` +
+        `I came from your website.`
     );
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank");
@@ -54,11 +63,7 @@ export default function App() {
         </p>
 
         <p className="quote">
-          “Sometimes you don’t need solutions — you just need someone who listens without interrupting.”
-        </p>
-
-        <p className="note">
-          Not therapy. Not counseling. Full Privacy. Just a place to be heard.
+          “Sometimes you don’t need solutions — you just need someone who listens.”
         </p>
 
         <button className="cta" onClick={startWhatsApp}>
@@ -66,22 +71,50 @@ export default function App() {
         </button>
       </section>
 
+      {/* USER TYPE */}
+      <section className="user-type">
+        <h3>Are you a student abroad?</h3>
+        <div className="toggle">
+          <button
+            className={userType === "normal" ? "active" : ""}
+            onClick={() => setUserType("normal")}
+          >
+            No
+          </button>
+          <button
+            className={userType === "student_abroad" ? "active" : ""}
+            onClick={() => setUserType("student_abroad")}
+          >
+            Yes (+5 min)
+          </button>
+        </div>
+      </section>
+
       {/* PRICING */}
       <section className="pricing">
-        <h2>Pricing</h2>
+        <h2>Choose Your Session</h2>
 
         <div className="cards">
-          <div className="card" onClick={() => handlePlanSelect(10, 10)}>
+          <div
+            className={`card ${selectedPlan.mins === 10 ? "active" : ""}`}
+            onClick={() => handlePlanSelect(10, 10)}
+          >
             <h3>10 Minutes</h3>
             <p>€10</p>
           </div>
 
-          <div className="card" onClick={() => handlePlanSelect(20, 15)}>
+          <div
+            className={`card ${selectedPlan.mins === 20 ? "active" : ""}`}
+            onClick={() => handlePlanSelect(20, 15)}
+          >
             <h3>20 Minutes</h3>
             <p>€15</p>
           </div>
 
-          <div className="card" onClick={() => handlePlanSelect(30, 25)}>
+          <div
+            className={`card ${selectedPlan.mins === 30 ? "active" : ""}`}
+            onClick={() => handlePlanSelect(30, 25)}
+          >
             <h3>20+ Minutes</h3>
             <p>€25</p>
           </div>
@@ -90,35 +123,35 @@ export default function App() {
 
       {/* SUMMARY */}
       <section className="summary">
-        <h2>Selected Plan</h2>
+        <h2>Summary</h2>
 
-        <p>
-          Duration: <strong>{selectedPlan.mins} min</strong>
-        </p>
+        <div className="summary-box">
+          <p>
+            Duration:{" "}
+            <strong>
+              {selectedPlan.mins === 30 ? "20+" : selectedPlan.mins} min
+            </strong>
+          </p>
 
-        <p>
-          Price: <strong>€{selectedPlan.price}</strong>
-        </p>
+          <p>
+            Price: <strong>€{selectedPlan.price}</strong>
+          </p>
 
-        <p>
-          Bonus Time: <strong>{extra} min</strong>
-        </p>
+          <p>
+            Bonus: <strong>{extra} min</strong>
+          </p>
 
-        <p className="small">{note}</p>
+          {note && <p className="small">{note}</p>}
+        </div>
 
-        <button className="cta" onClick={startWhatsApp}>
-          Continue on WhatsApp
+        <button className="cta big" onClick={startWhatsApp}>
+          Continue on WhatsApp →
         </button>
       </section>
 
-      {/* OFFER INFO */}
-      <section className="offers">
-        <h2>Special Notes</h2>
-        <ul>
-          <li>🎓 Students from abroad get +5 minutes extra</li>
-          <li>🔥 First 3 callers get +3 minutes extra</li>
-          <li>⏳ Sessions confirmed via WhatsApp</li>
-        </ul>
+      {/* FOOTER */}
+      <section className="footer">
+        <p>Not therapy. Fully confidential. Just listening.</p>
       </section>
     </div>
   );

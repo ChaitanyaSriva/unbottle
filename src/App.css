@@ -76,3 +76,59 @@ body {
 .offers {
   margin-top: 50px;
 }
+.cards {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #1e293b;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 150px;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card.active {
+  border: 2px solid #38bdf8;
+  background: #334155;
+}
+
+.cta.big {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.summary-box {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.toggle {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.toggle button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle .active {
+  background: #38bdf8;
+  color: black;
+}
