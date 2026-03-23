@@ -100,7 +100,7 @@ export default function App() {
             onClick={() => handlePlanSelect(10, 10)}
           >
             <h3>10 Minutes</h3>
-            <p>€10</p>
+            <p>€5</p>
           </div>
 
           <div
@@ -108,7 +108,7 @@ export default function App() {
             onClick={() => handlePlanSelect(20, 15)}
           >
             <h3>20 Minutes</h3>
-            <p>€15</p>
+            <p>€7</p>
           </div>
 
           <div
@@ -116,7 +116,7 @@ export default function App() {
             onClick={() => handlePlanSelect(30, 25)}
           >
             <h3>20+ Minutes</h3>
-            <p>€25</p>
+            <p>€10</p>
           </div>
         </div>
       </section>
