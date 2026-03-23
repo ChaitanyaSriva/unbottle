@@ -59,7 +59,7 @@ export default function App() {
         <h1>VentOut</h1>
 
         <p className="tagline">
-          A quiet space where you as a TU Delft student can say what’s on your mind.
+          A quiet and safe space where you as a TU Delft student can say what’s on your mind.
         </p>
 
         <p className="quote">
