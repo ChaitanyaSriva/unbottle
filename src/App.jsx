@@ -63,7 +63,7 @@ export default function App() {
         </p>
 
         <p className="quote">
-          “Sometimes you don’t need solutions — you just need someone who listens.”
+          “Sometimes we don’t need solutions — we just need someone who listens.”
         </p>
 
         <button className="cta" onClick={startWhatsApp}>
