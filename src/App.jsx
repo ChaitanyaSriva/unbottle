@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 
 export default function App() {
-  const WHATSAPP_NUMBER = "918383050602";
+  const WHATSAPP_NUMBER = "31626032316";
 
   const [selectedPlan, setSelectedPlan] = useState({
     mins: 10,
