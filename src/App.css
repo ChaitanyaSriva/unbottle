@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.tagline {
+  opacity: 0.8;
+}
+
+.quote {
+  margin: 20px auto;
+  max-width: 500px;
+  font-style: italic;
+}
+
+.note {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.cta {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cta:hover {
+  background: #16a34a;
+}
+
+.pricing {
+  margin-top: 50px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 150px;
+}
+
+.card:hover {
+  background: #334155;
+}
+
+.summary {
+  margin-top: 50px;
+}
+
+.small {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.offers {
+  margin-top: 50px;
+}
